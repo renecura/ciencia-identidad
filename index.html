@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Buscadores de órganos AR</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm text-center">
+                <h1>Buscadores de órganos AR</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm text-center">
+                <h2 id="resultado"></h2>
+            </div>
+        </div>
+
+        <div id="eleccion">
+            <div class="row">
+                <div class="col">
+                    <img id="organo-imagen" width="300" src="" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col text-center">
+                    <button id="recoger" type="button" class="btn btn-success btn-lg">Recoger</button>
+                </div>
+                <div class="col text-center">
+                    <button id="ignorar" type="button" class="btn btn-danger btn-lg">Ignorar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm text-center">
+                <button type="button" class="btn btn-primary btn-lg" id="scanear">Scanear</button>
+            </div>
+        </div>
+
+        <div class="row" id="div_scanner">
+            <div class="col-sm text-center">
+                <video id='scanner' width="300" height="300"></video>
+            </div>
+        </div>
+
+        <div class="row" id="div_clock">
+            <div class="col-sm text-center">
+                <h1 id="clock">12345</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm text-center">
+                <button type="button" class="btn btn-danger btn-lg" id="cancelar">Cancelar</button>
+            </div>
+        </div>
+
+        <div id="div_inventario">
+            <div class="row" id>
+                <div class="col-sm text-center">
+                    <h2>Inventario</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center">
+                    <table id="inventario" class="table">
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="./qr-scanner/qr-scanner.umd.min.js"></script>
+    <script type="module" src='index.js'></script>
+
+</body>
+
+</html>
