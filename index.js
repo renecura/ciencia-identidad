@@ -23,14 +23,25 @@ document.getElementById('btn-video-volver')
 const video = document.getElementById('video');
 
 const piezas = {
-    'CI01':'adn',
-    'CI02':'contacto-abuelas',
-    'CI03':'dictadura',
-    'CI04':'eaaf',
-    'CI05':'enemigo',
-    'CI06':'huesos-largos',
-    'CI07':'pelvis',
-    'CI08':'siluetazo',
+    'CI01': 'adn',
+    'CI02': 'contacto-abuelas',
+    'CI03': 'dictadura',
+    'CI04': 'eaaf',
+    'CI05': 'enemigo',
+    'CI06': 'huesos-largos',
+    'CI07': 'pelvis',
+    'CI08': 'siluetazo',
+}
+
+const videos = {
+    'CI01': 'svE0SWQ9gJU',
+    'CI02': 'ONKQDFwvbGw',
+    'CI03': 'VORn8jGAQUw',
+    'CI04': 'R_UT34S4NCE',
+    'CI05': 'P-NGmeC2xNI',
+    'CI06': '9g1AhXMbKGg',
+    'CI07': 'l268x3aiCak',
+    'CI08': '5_pT7ulCCug',
 }
 
 const piezas_reveladas = [];
@@ -44,20 +55,21 @@ function revelar_piezas(piezas_reveladas) {
 
 
 function setup() {
-    console.log("Setup");    
+    console.log("Setup");
     screen_silueta();
 }
 
-function screen_silueta(){    
+function screen_silueta() {
     video_screen.hidden = true;
     scanner_screen.hidden = true;
-    video.pause();
-    
+    //video.pause();
+    video.src = '';
+
     revelar_piezas(piezas_reveladas);
     silueta_screen.hidden = false;
 }
 
-function screen_scanner(){
+function screen_scanner() {
     silueta_screen.hidden = true;
     video_screen.hidden = true;
 
@@ -65,15 +77,16 @@ function screen_scanner(){
     scanner_screen.hidden = false;
 }
 
-function screen_video(codigo){
-    silueta_screen.hidden = true;    
+function screen_video(codigo) {
+    silueta_screen.hidden = true;
     scanner_screen.hidden = true;
 
-    console.log(`videos/${piezas[codigo]}.mp4`);
-    video.src = `videos/${piezas[codigo]}.mp4`;
-    
+    // console.log(`videos/${piezas[codigo]}.mp4`);
+    // video.src = `videos/${piezas[codigo]}.mp4`;
+    video.src = `https://www.youtube.com/embed/${videos[codigo]}`;
+
     // openFullscreen();
-    video.play();
+    //video.play();
 
     video_screen.hidden = false;
 }
@@ -96,21 +109,21 @@ function openFullscreen() {
 function procesar(result) {
 
     const rex = /.*\?(.*)/
-    const urlParams = new URLSearchParams(result.replace(rex,'$1'));
+    const urlParams = new URLSearchParams(result.replace(rex, '$1'));
     const codigo = urlParams.get('codigo');
 
     if (!codigo) {
         console.log("Searching...");
         return;
-    } 
+    }
 
     console.log('QR detectado: ', codigo);
 
-    if (!piezas.hasOwnProperty(codigo)){
+    if (!piezas.hasOwnProperty(codigo)) {
         console.log("Piezas inválida...");
         return;
     }
-    
+
     // Encontró una pieza
 
     qrScanner.stop();
@@ -118,7 +131,9 @@ function procesar(result) {
     piezas_reveladas.push(codigo);
 
     screen_video(codigo);
-   
+
 }
+
+
 
 setup();

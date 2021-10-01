@@ -2,16 +2,16 @@
 <html>
 
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    
-    <title>Ciencia & Identidad</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Ciencia & Identidad</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
   <!-- Photo Grid -->
 
   <div id="silueta-screen">
-    <div class="row"> 
+    <div class="row">
       <div class="column">
         <img id="silueta-CI01" src="img/silueta-CI01.jpg" style="width:100%">
         <img id="completa-CI01" src="img/completa-CI01.jpg" style="width:100%" hidden>
@@ -34,7 +34,7 @@
         <img id="silueta-CI05" src="img/silueta-CI05.jpg" style="width:100%">
         <img id="completa-CI05" src="img/completa-CI05.jpg" style="width:100%" hidden>
         <img id="silueta-CI07" src="img/silueta-CI07.jpg" style="width:100%">
-        <img id="completa-CI07" src="img/completa-CI07.jpg" style="width:100%" hidden>        
+        <img id="completa-CI07" src="img/completa-CI07.jpg" style="width:100%" hidden>
       </div>
       <div class="column">
         <img id="silueta-CI02" src="img/silueta-CI02.jpg" style="width:100%">
@@ -45,7 +45,7 @@
         <img id="completa-CI06" src="img/completa-CI06.jpg" style="width:100%" hidden>
         <img id="silueta-CI08" src="img/silueta-CI08.jpg" style="width:100%">
         <img id="completa-CI08" src="img/completa-CI08.jpg" style="width:100%" hidden>
-      </div>    
+      </div>
     </div>
     <div class="row">
       <div class="col-sm text-center">
@@ -58,12 +58,12 @@
   <div id="scanner-screen" hidden>
     <div class="row" id="div_scanner">
       <div class="col-sm text-center">
-          <video id='scanner' width="60%" ></video>
+        <video id='scanner' width="60%"></video>
       </div>
     </div>
     <div class="row">
       <div class="col-sm text-center">
-          <button type="button" class="btn btn-danger btn-lg" id="btn-stop-buscar">Cancelar</button>
+        <button type="button" class="btn btn-danger btn-lg" id="btn-stop-buscar">Cancelar</button>
       </div>
     </div>
   </div>
@@ -72,13 +72,16 @@
   <div id="video-screen">
     <div class="row">
       <div class="col">
-        <video id="video" width="100%" src="" controls>
-        </video>
+
+        <iframe id="video" width="100%" height="500" src="" title="Ciencia e identidad"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+
       </div>
     </div>
     <div class="row">
       <div class="col-sm text-center">
-          <button type="button" class="btn btn-danger btn-lg" id="btn-video-volver">Volver</button>
+        <button type="button" class="btn btn-danger btn-lg" id="btn-video-volver">Volver</button>
       </div>
     </div>
   </div>
@@ -86,11 +89,12 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 
   <script type="module" src="./qr-scanner/qr-scanner.umd.min.js"></script>
   <script type="module" src='index.js'></script>
 
 </body>
+
 </html>
