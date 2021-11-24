@@ -33,6 +33,18 @@ const piezas = {
     'CI08': 'siluetazo',
 }
 
+const shortened = {
+    'https://qrco.de/bcS3qY':'CI01',
+    'https://qrco.de/bcS3x8':'CI02',
+    'https://qrco.de/bcS40t':'CI03',
+    'https://qrco.de/bcS4JG':'CI04',
+    'https://qrco.de/bcS4OW':'CI05',
+    'https://qrco.de/bcS4Zh':'CI06',
+    'https://qrco.de/bcS4fp':'CI07',
+    'https://qrco.de/bcS4jD':'CI08',
+}
+
+
 const videos = {
     'CI01': 'svE0SWQ9gJU',
     'CI02': 'ONKQDFwvbGw',
@@ -110,7 +122,12 @@ function procesar(result) {
 
     const rex = /.*\?(.*)/
     const urlParams = new URLSearchParams(result.replace(rex, '$1'));
-    const codigo = urlParams.get('codigo');
+    let codigo = urlParams.get('codigo');
+
+    if (shortened.hasOwnProperty(result)) {
+        console.log("URl acortada detectada: ", result);
+        codigo = shortened[result];
+    }
 
     if (!codigo) {
         console.log("Searching...");
